@@ -87,6 +87,8 @@ class CustomPreviewBrowserProvider implements BrowserProvider {
     if (!this.project.browser) {
       throw new Error('Browser is not initialized')
     }
+    // eslint-disable-next-line no-console
+    console.log(`Launching ${this.project.config.browser.name}: ${url}`)
     this.spinBrowser(url)
     /* const options = this.project.browser.vite.config.server
     const _open = options.open
