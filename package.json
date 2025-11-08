@@ -8,7 +8,10 @@
     "preview": "vite preview",
     "test:browser": "vitest --config=vitest.browser.config.mts",
     "test:browser:chrome": "cross-env BROWSER=chrome vitest --config=vitest.browser.config.mts",
-    "test:browser:firefox": "cross-env BROWSER=firefox vitest --config=vitest.browser.config.mts"
+    "test:browser:firefox": "cross-env BROWSER=firefox vitest --config=vitest.browser.config.mts",
+    "test:browser:playwright": "cross-env BROWSER_PROVIDER=playwright vitest --config=vitest.browser.config.mts",
+    "test:browser:playwright:chrome": "cross-env BROWSER_PROVIDER=playwright BROWSER=chrome vitest --config=vitest.browser.config.mts",
+    "test:browser:playwright:firefox": "cross-env BROWSER_PROVIDER=playwright BROWSER=firefox vitest --config=vitest.browser.config.mts"
   },
   "dependencies": {
     "vue": "^3.5.22"
@@ -18,7 +21,9 @@
     "@types/node": "^24.6.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitest/browser": "https://pkg.pr.new/@vitest/browser@8977",
+    "@vitest/browser-playwright": "https://pkg.pr.new/@vitest/browser-playwright@8977",
     "@vitest/browser-preview": "https://pkg.pr.new/@vitest/browser-preview@8977",
+    "@vitest/browser-webdriverio": "https://pkg.pr.new/@vitest/browser-webdriverio@8977",
     "@vue/tsconfig": "^0.8.1",
     "cross-env": "^10.1.0",
     "cross-spawn": "^7.0.6",
