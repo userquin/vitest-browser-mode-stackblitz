@@ -24,6 +24,6 @@
     "vue-tsc": "^3.1.0"
   },
   "stackblitz": {
-    "startCommand": "npm run install && npm run test:browser"
+    "startCommand": "npm install && npm run test:browser"
   }
 }
