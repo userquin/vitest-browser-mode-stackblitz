@@ -1,7 +1,6 @@
 {
   "name": "vitest-browser-mode-stackblitz",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.19.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -25,6 +24,6 @@
     "vue-tsc": "^3.1.0"
   },
   "stackblitz": {
-    "startCommand": "pnpm run test:browser"
+    "startCommand": "npm run install && npm run test:browser"
   }
 }
