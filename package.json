@@ -1,0 +1,30 @@
+{
+  "name": "vitest-browser-mode-stackblitz",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.19.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "test:browser": "vitest --config=vitest.browser.config.ts"
+  },
+  "dependencies": {
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/browser": "https://pkg.pr.new/@vitest/browser@8977",
+    "@vitest/browser-preview": "https://pkg.pr.new/@vitest/browser-preview@8977",
+    "@vue/tsconfig": "^0.8.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "https://pkg.pr.new/vitest@8977",
+    "vitest-browser-vue": "^2.0.1",
+    "vue-tsc": "^3.1.0"
+  },
+  "stackblitz": {
+    "startCommand": "pnpm run test:browser"
+  }
+}
