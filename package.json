@@ -10,7 +10,7 @@
     "test:browser:chrome": "cross-env BROWSER=chrome vitest --config=vitest.browser.config.mts",
     "test:browser:firefox": "cross-env BROWSER=firefox vitest --config=vitest.browser.config.mts",
     "test:browser:playwright": "cross-env BROWSER_PROVIDER=playwright vitest --config=vitest.browser.config.mts",
-    "test:browser:playwright:chrome": "cross-env BROWSER_PROVIDER=playwright BROWSER=chrome vitest --config=vitest.browser.config.mts",
+    "test:browser:playwright:chromium": "cross-env BROWSER_PROVIDER=playwright BROWSER=chromium vitest --config=vitest.browser.config.mts",
     "test:browser:playwright:firefox": "cross-env BROWSER_PROVIDER=playwright BROWSER=firefox vitest --config=vitest.browser.config.mts"
   },
   "dependencies": {
