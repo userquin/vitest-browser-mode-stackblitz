@@ -1,6 +1,5 @@
 import type { BrowserProvider, BrowserProviderOption, TestProject } from 'vitest/node'
 import path from 'node:path'
-import { nextTick } from 'node:process'
 import { defineBrowserProvider } from '@vitest/browser'
 import { openBrowser as _openBrowser } from './openBrowser'
 
@@ -31,9 +30,9 @@ class CustomPreviewBrowserProvider implements BrowserProvider {
         'You\'ve enabled headless mode for "preview" provider but it doesn\'t support it. Use "playwright" or "webdriverio" instead: https://vitest.dev/guide/browser/#configuration',
       )
     }
-    nextTick(() => {
+    /* nextTick(() => {
       project.vitest.logger.printBrowserBanner(project)
-    })
+    }) */
   }
 
   isOpen(): boolean {
@@ -83,10 +82,15 @@ class CustomPreviewBrowserProvider implements BrowserProvider {
   }
 
   async openPage(_sessionId: string, url: string): Promise<void> {
+    if (this.open) {
+      return
+    }
     this.open = true
     if (!this.project.browser) {
       throw new Error('Browser is not initialized')
     }
+    this.project.vitest.logger.printBrowserBanner(this.project)
+
     // eslint-disable-next-line no-console
     console.log(`Launching ${this.project.config.browser.name}: ${url}`)
     this.spinBrowser(url)
